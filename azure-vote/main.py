@@ -1,23 +1,13 @@
 import logging
 import os
-import random
 import socket
-import sys
-from datetime import datetime
 
 import redis
 from flask import Flask, render_template, request
-
 from opencensus.ext.azure import metrics_exporter
 from opencensus.ext.azure.log_exporter import AzureEventHandler, AzureLogHandler
 from opencensus.ext.azure.trace_exporter import AzureExporter
 from opencensus.ext.flask.flask_middleware import FlaskMiddleware
-from opencensus.stats import aggregation as aggregation_module
-from opencensus.stats import measure as measure_module
-from opencensus.stats import stats as stats_module
-from opencensus.stats import view as view_module
-from opencensus.tags import tag_map as tag_map_module
-from opencensus.trace import config_integration
 from opencensus.trace.samplers import ProbabilitySampler
 from opencensus.trace.tracer import Tracer
 
